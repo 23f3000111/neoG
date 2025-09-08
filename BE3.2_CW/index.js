@@ -15,6 +15,7 @@ app.post("/cars", (req, res) => {
     if(!newCar.maker || !newCar.model || !newCar.year){
         res.status(400).json({error: "Maker, model and year are required."})
     } else {
+        cars.push(newCar)
         res.status(201).json({message: "car added succesfully", car: newCar})
     }
 })
